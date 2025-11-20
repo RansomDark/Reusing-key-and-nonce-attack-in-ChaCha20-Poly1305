@@ -109,7 +109,10 @@ def get_payload(c1, c2, p1, goal):
 
 goal = b"But it's only secure if used correctly!"
 p1 = b"Did you know that ChaCha20-Poly1305 is an authenticated encryption algorithm?" 
-c1 = 'f0075f3b9eb1c513ec9c0133163698348795a28e00fb2847e2780ec4ff0c587c409b3b805cd025677e8ec37cc134aa5fefa153650177612a2e3f0866466fc875bcba45f618b01714675e110833df7e8fb1dec09da73028d4f2b4909bce39b59892b83c01acd380ad36' # c1 = hex(p1 + ChaCha20(p1) + tag1 + nonce)
-c2 = 'e0065a6fc7b3d552e9814e2d426280279cc1848515cb6044bf3c4bb4e408446d10c460c65cc7606864c7c365dc28b611faa654241c7c716f2c230260463fd37af3b004e315f6802206876433c1d7d4fa76c959911bc139b59892b83c01acd380ad36' # c2 = hex(p2 + ChaCha20(p2) + tag2 + nonce)
-payload = get_payload(c1, c2, p1, goal) # payload = hex(goal + ChaCha20(goal) + tag_goal + nonce)
+c1 = 'f0075f3b9eb1c513ec9c0133163698348795a28e00fb2847e2780ec4ff0c587c409b3b805cd025677e8ec37cc134aa5fefa153650177612a2e3f0866466fc875bcba45f618b01714675e110833df7e8fb1dec09da73028d4f2b4909bce39b59892b83c01acd380ad36' 
+# c1 = hex(p1 + ChaCha20(p1) + tag1 + nonce)
+c2 = 'e0065a6fc7b3d552e9814e2d426280279cc1848515cb6044bf3c4bb4e408446d10c460c65cc7606864c7c365dc28b611faa654241c7c716f2c230260463fd37af3b004e315f6802206876433c1d7d4fa76c959911bc139b59892b83c01acd380ad36' 
+# c2 = hex(p2 + ChaCha20(p2) + tag2 + nonce)
+payload = get_payload(c1, c2, p1, goal) 
+# payload = hex(goal + ChaCha20(goal) + tag_goal + nonce)
 print(payload)
